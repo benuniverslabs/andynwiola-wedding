@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { SelectOption } from '../../Form.interface'
+import { SelectOption } from '../Form.interface';
 import FormSelect from '../FormSelect/FormSelect'
 import styles from './TimeSelect.module.scss'
 

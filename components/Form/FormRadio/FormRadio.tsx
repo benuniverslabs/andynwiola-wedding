@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 import { ErrorMessage, Field } from 'formik'
 import { FC } from 'react'
-import { SelectOption } from '../../Form.interface'
-import FieldLabel from '../FieldLabel/FieldLabel'
+import { SelectOption } from '../Form.interface';
 import styles from './FormRadio.module.scss'
 
 interface FormRadioProps {
@@ -14,7 +13,6 @@ interface FormRadioProps {
 
 const FormRadio: FC<FormRadioProps> = ({ name, label, options, className }) => (
   <div className={classNames(styles.container, className)}>
-    <FieldLabel className={styles.label} label={label} />
     <div
       className={styles.radios}
       role="group"

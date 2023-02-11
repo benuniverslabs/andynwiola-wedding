@@ -1,10 +1,8 @@
 import { FC } from 'react'
 import { ErrorMessage, Field } from 'formik'
 import classNames from 'classnames'
-import { SelectOption } from '../../Form.interface'
-import FieldLabel from '../FieldLabel/FieldLabel'
 import styles from './FormSelect.module.scss'
-import { Icon } from '~/components/Icon/Icon'
+import { SelectOption } from '../Form.interface';
 
 interface FormSelectProps {
   name: string;
@@ -27,7 +25,6 @@ const FormSelect: FC<FormSelectProps> = ({
 }) => (
   <div className={classNames(styles.container, className)}>
     <label htmlFor={name}>
-      <FieldLabel label={label} />
       <div className={styles.selectbox}>
         <Field className={styles.input} as="select" id={name} name={name}>
           {placeholder && (
@@ -44,12 +41,7 @@ const FormSelect: FC<FormSelectProps> = ({
             )
           })}
         </Field>
-        <div className={styles['icon-overlay']}>
-          <Icon
-            className={classNames(styles.icon, iconStyles)}
-            name={icon ?? '#arrow-down'}
-          />
-        </div>
+       
       </div>
     </label>
     <ErrorMessage
