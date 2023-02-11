@@ -27,34 +27,34 @@ const HeaderList: FC<HeaderListProps> = ({ items }) => {
 
 const Header = () => {
 	const [showMobileNav, setShowMobileNav] = useState(false);
-	const [navChange, setNavChange] = useState(false)
-    
-    useEffect(() => {
-        const handleScroll = () => {
-          if (window.pageYOffset > window.innerHeight - 90) {
-            setNavChange(true);
-          } else {
-            setNavChange(false);
-          }
-        };
-    
-        window.addEventListener("scroll", handleScroll);
-    
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
+	const [navChange, setNavChange] = useState(false);
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.pageYOffset > window.innerHeight - 90) {
+				setNavChange(true);
+			} else {
+				setNavChange(false);
+			}
+		};
 
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setShowMobileNav(e.target.checked);
 	};
 	return (
 		<div>
-			<nav className={classNames(styles.header, {
-				[styles.change]: navChange,
-			})}>
+			<nav
+				className={classNames(styles.header, {
+					[styles.change]: navChange,
+				})}
+			>
 				<div className={styles['logo-container']}>
 					<Image
 						className={styles.logo}
@@ -78,37 +78,43 @@ const Header = () => {
 						Gifts
 					</a>
 					<a className="nav-item nav-link" href="#qnaire">
-						Questionairre
+						Questionnaire
 					</a>
-					{/* <button>RSVP</button> */}
-					<button type="button" className="btn btn-outline-secondary">RSVP</button>
+					<button type="button" className="btn btn-outline-secondary">
+						RSVP
+					</button>
 				</div>
 				<div>
-					<HamburgerIcon onChange={handleChange} />
+					<HamburgerIcon onChange={handleChange} active={showMobileNav}/>
 				</div>
-				{/* <button>RSVP</button> */}
 			</nav>
 			<div
-				className={classNames(styles['mobile-links'], {
+				className={classNames(styles['mobile-links-container'], {
 					[styles.show]: showMobileNav,
 				})}
 			>
-				<nav className="navbar px-4">
-					<div className="navbar-nav">
-						<a className="nav-item nav-link active" href="#">
-							Home
+				<div className={styles['mobile-links']}>
+					<div>
+						<a onClick={() => setShowMobileNav(false)} className="nav-item nav-link active" href="#information">
+							Information
 						</a>
-						<a className="nav-item nav-link" href="#">
-							Features
+						<a onClick={() => setShowMobileNav(false)}  className="nav-item nav-link" href="#day2">
+							Day 2
 						</a>
-						<a className="nav-item nav-link" href="#">
-							Pricing
+						<a onClick={() => setShowMobileNav(false)}  className="nav-item nav-link" href="#location">
+							Location
 						</a>
-						<a className="nav-item nav-link" href="#">
-							Disabled
+						<a onClick={() => setShowMobileNav(false)}  className="nav-item nav-link" href="#gifts">
+							Gifts
+						</a>
+						<a onClick={() => setShowMobileNav(false)}  className="nav-item nav-link" href="#qnaire">
+							Questionnaire
 						</a>
 					</div>
-				</nav>
+					<button type="button" className="btn btn-outline-secondary">
+						RSVP
+					</button>
+				</div>
 			</div>
 		</div>
 	);

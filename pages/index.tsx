@@ -40,32 +40,33 @@ export default function Home() {
 			<Section id="information" title="Information">
 				<div id="ceremony">
 					<h5 className="heading-title">Ceremony</h5>
-					<p className="body-text">Location of Ceremony</p>
+					<p className="body-text">Kościół Przemienienia Pańskiego</p>
 				</div>
 				<div id="Reception">
 					<h4 className="heading-title">Reception</h4>
-					<p className="body-text">Location of Reception</p>
+					<p className="body-text">Sala Weselna Chabrowy</p>
 				</div>
 				<div id="Transport">
 					<h4 className="heading-title">Transport</h4>
 					<p className="body-text">
-						We are happy to arrange transport for our guests from Warsaw Choppin
-						Airport once arrival dates and tomie are conformed
+						We are happy to arrange transport from Warsaw airport for our guests
+						once arrival dates and times are confirmed.
 					</p>
 					<p className="body-text">
-						Transport will be provied from your accomation throught the dfaty.
-						Please be ready for 2:00pm
+						Transport will be provided from your accommodation throughout the
+						day. Please be ready for 2:00PM
 					</p>
 				</div>
-				<div id="Accomodation">
-					<h4 className="heading-title">Accomdation</h4>
+				<div id="accomodation">
+					<h4 className="heading-title">Accommodation</h4>
 					<p className="body-text">
-						Rooms have been sorted blah blah blah blah blah fdkshfoidshnfds
-						ihodsbfods fodsf dsfdshfodsf
+						A block of rooms have been reserved for our guests. Please confirm
+						if you would like us to book it for you. Please fill in attached
+						questionnaire to provide the details.
 					</p>
 				</div>
 
-				<Button variant="outline-dark">QUESTIONNAIRE</Button>
+				<Button variant="outline-dark">Questionnaire</Button>
 			</Section>
 
 			<Section id="day2" title="Day 2">
@@ -74,46 +75,48 @@ export default function Home() {
 						After Party
 					</h4>
 					<p className="body-text">
-						Polish weddings often last all night and can include a second day of
-						partying. This wedding celbration takes place right ater the first
-						dat and its muchh nore private and less formal. We would like to
-						invite you to celbrate with us on Sunday 8Th
+						Polish wedding receptions often last all night and can include a
+						second day of partying. This wedding celebration takes place right
+						after the first day and is much more private and less formal. We
+						would like to invite you to celebrate with us on Sunday 8th October
+						(time TBC)
 					</p>
 				</div>
 
-				<div id="location">
-					<h4 className="heading-title" style={{ marginBottom: '4rem' }}>
-						Location
-					</h4>
-					<h4 className="heading-title" style={{ marginBottom: '4rem' }}>
-						Lukrow
+				<Section title="Location" id="location">
+					<h4 className="heading-title" style={{ marginBottom: '2rem' }}>
+						Łuków
 					</h4>
 					<p className="body-text">
-						Is a small town in Eastern Poland around 120km from the capital
+						Is a small town in Eastern Poland located around 120km from the
+						capital
 					</p>
-				</div>
 
-				<div id="gifts">
-					<h4 className="heading-title" style={{ marginBottom: '4rem' }}>
-						Gifts
+					<h4 className="heading-title" style={{ marginBottom: '2em' }}>
+						Destination Airport
 					</h4>
+					<p className="body-text">Warsaw Chopin Airport</p>
+				</Section>
 
+				<Section title="Gifts" id="gifts">
 					<p className="body-text">
 						Please do not feel obliged to buy us a gift, all that we are
-						expecting is you. If you would like to give something, a
-						contribution would be greatly appreciated. Thank you. The Bride and
-						Groom
+						expecting is you. If you would like to give us something, a
+						contribution would be greatly appreciated. Thank you, The Bride and
+						Groom.
 					</p>
-				</div>
+				</Section>
+			</Section>
+
+			<Section title="Questionnaire" id="qnaire">
+				<Qnaire />
 			</Section>
 
 			<Section title="RSVP" id="RSVP">
 				<RSVP />
 			</Section>
 
-			<Section title="Questionairre" id="qnaire">
-				<Qnaire />
-			</Section>
+			
 		</div>
 	);
 }

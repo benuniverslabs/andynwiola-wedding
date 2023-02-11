@@ -1,16 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import NamePicker from '../FormComponents/NamePicker';
 import { Formik, Form } from 'formik';
-import styles from './Qnaire.module.scss';
-import { DatePicker } from '../FieldPicker/DatePicker';
 import validationSchema from './validation';
 import FormInput from '../FormInput/FormInput';
+import styles from './Qnaire.module.scss';
 
 const Qnaire = () => (
 	<section className={styles.container} id="rsvp">
 		<p>
-			In order to book your travel and acoomodation please fill out the
-			questionairre below
+			In order to book your transfer from Warsaw Choppin airport please fill out the questionnaire below.
 		</p>
 		<div id="afterparty">
 			<Formik

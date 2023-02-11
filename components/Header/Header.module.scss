@@ -35,7 +35,7 @@
     display:none;
   }
   
-  .mobile-links {
+  .mobile-links-container {
     z-index:222;
     height: calc(100vh - 90px);
     position:fixed;
@@ -45,14 +45,39 @@
     overflow-y: auto;
     background:white;
     transition: transform 0.2s ease-in-out;
+    padding-top:2rem;
+    padding-inline:1rem;
   
     &.show {    
       transform: translateX(0%);     
     }
   }
+
+  .mobile-links {
+
+    row-gap:1rem;
+    height:100%;
+
+     a {
+        border-top:1px solid black;
+        padding-block: 1rem;
+    }
+
+    a:last-child {
+        border-bottom:1px solid black;
+    }
+
+    > div {
+        padding-bottom:1rem;
+    };
+
+
+
+
+  }
   
   @include tablet {
-    .mobile-links {
+    .mobile-links-container {
       display:none;
     }
   

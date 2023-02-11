@@ -10,13 +10,14 @@ body {
   font-size: 22px;
   font-weight: 500;
 
-  @include bodyBoldItalic;
+  // @include bodyBoldItalic;
+  @include bodyBold;
+  letter-spacing: 0.6px;
 }
 
 
 .heading-title {
   font-size:18px;
-  text-decoration: underline;
   margin-bottom:1rem;
 
   @include bodyBold;

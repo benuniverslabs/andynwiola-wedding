@@ -2,14 +2,16 @@ import React, { FC } from 'react';
 import styles from './HamburgerIcon.module.scss';
 
 interface HamburgerProps {
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    active?: boolean;
 }
 
-const HamburgerIcon: FC<HamburgerProps> = ({ onChange }) => {
+const HamburgerIcon: FC<HamburgerProps> = ({ onChange, active }) => {
 	return (
 		<>
 			<input
 				onChange={onChange}
+                checked={active}
 				type="checkbox"
 				id="toggle"
 				className={styles.toggle}

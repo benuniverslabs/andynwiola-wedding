@@ -1,3 +1,5 @@
 .container {
-    text-align: left;
+    :not(p) {
+        text-align: left;
+    }
 }
