@@ -1,0 +1,58 @@
+.container {
+  margin-bottom: 3rem;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  border-bottom: black;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+
+.checkbox {
+  opacity: 0;
+  display:none;
+}
+
+.check-label {
+  color: black;;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-container {
+  position: relative;
+  padding-left: 35px;
+}
+
+.check {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+.check::after {
+  content: url('/icons/tick.svg');
+  display: none;
+  position: absolute;
+}
+
+.checkbox-container .check::after {
+  top: -3px;
+  left: 4px;
+  width: 11px;
+}
+
+.checkbox-container .checkbox:checked ~ .check::after {
+  display: block;
+}

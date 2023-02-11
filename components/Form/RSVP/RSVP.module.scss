@@ -1,0 +1,23 @@
+@import '@/styles/main';
+
+.container {
+    @include bodyFont;
+    text-align: left;
+}
+
+
+.title {
+    @include bodyBold;
+    text-decoration: underline;
+}
+
+.sub-title {
+    text-decoration: underline;
+}
+
+.check-group {
+    margin-block:2rem;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap:1rem;
+}

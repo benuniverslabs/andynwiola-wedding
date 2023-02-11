@@ -1,0 +1,30 @@
+@import '@/styles/main';
+
+body {
+  background: #EFE7DA;
+}
+
+
+.page-title {
+  text-decoration: underline;
+  font-size: 22px;
+  font-weight: 500;
+
+  @include bodyBoldItalic;
+}
+
+
+.heading-title {
+  font-size:18px;
+  text-decoration: underline;
+  margin-bottom:1rem;
+
+  @include bodyBold;
+
+}
+
+.body-text {
+  @include bodyFont;
+  margin-block:2rem;
+}
+

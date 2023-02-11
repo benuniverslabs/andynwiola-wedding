@@ -1,0 +1,77 @@
+@import '@/styles/main';
+
+.header {
+    height:90px;
+    background-color: white; 
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-inline: 20px;
+    position: fixed;
+    top:0;
+    z-index:222;
+    left:0;
+    right:0;
+    transition: background-color 250ms linear;
+
+    &.change {
+        background-color: #EFE7DA;
+    }
+    
+  }
+  
+  .logo-container {
+    width: 50px;
+    height: 63px;
+  }
+  
+  .logo{
+    width:100%;
+    height:100%;
+    object-fit: contain;
+  }
+  
+  .main-links {
+    display:none;
+  }
+  
+  .mobile-links {
+    z-index:222;
+    height: calc(100vh - 90px);
+    position:fixed;
+    top:90px;
+    width:100%;
+    transform: translateX(100%);  
+    overflow-y: auto;
+    background:white;
+    transition: transform 0.2s ease-in-out;
+  
+    &.show {    
+      transform: translateX(0%);     
+    }
+  }
+  
+  @include tablet {
+    .mobile-links {
+      display:none;
+    }
+  
+    .main-links {
+      display:flex;
+      align-items: center;
+      gap: 35px;
+      flex:1;
+      justify-content: flex-end;
+
+      > a {
+        font-size: 16px;
+        @include bodyBold;
+        color:#555;
+        letter-spacing: 0.5px;
+      }
+
+      > button {
+        justify-self: flex-end;
+      }
+    }
+  }

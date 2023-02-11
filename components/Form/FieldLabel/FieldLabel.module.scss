@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--c-secondary);
+  font-weight: var(--fw-semibold);
+  line-height: 2.1rem;
+}
+
+
+.input-label-optional {
+
+}

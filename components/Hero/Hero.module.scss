@@ -1,0 +1,82 @@
+@import '@/styles/main';
+
+.container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px);
+    letter-spacing: 0.12em;
+    background-color: #EFE7DA;
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+        display:grid;
+
+        .image-container {
+            position: relative;
+        }
+    }   
+
+    .text-container {
+        color: white;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width:80%;
+
+        @include tablet {
+            position: relative;
+            order: -1;
+
+            // background-color: #EFE7DA;
+            color: black;
+            top: unset;
+            left: unset;
+            transform: unset;
+            width:100%;
+            display:grid;
+            align-items: center;
+            justify-content: center;
+            grid-template-rows: 80px 165px 33px;
+            align-self: center;
+        }
+
+        .hero-text {
+            font-size: 44px;
+            font-weight: 500;
+            line-height: 50px;
+            @include bodyBoldItalic;
+        }
+
+        .hero-date {
+            font-size: 24px;
+            @include bodyFont;
+        }
+
+        
+    }
+
+    .hero-image {
+        object-fit: cover;
+        filter: brightness(85%);
+    }
+}
+
+.text-image-container {
+    display:none;
+    width:125px;
+    height:125px;
+    margin-inline: auto;
+    img {
+        width:100%;
+        height:100%;
+        object-fit: contain;
+    }
+
+    @include tablet {
+        display:block;
+    }
+}
+
+

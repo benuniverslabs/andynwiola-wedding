@@ -1,0 +1,55 @@
+/*
+// include any custom fonts in here
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+// if they are self hosted, put the in the /public/fonts/ folder
+*/
+
+@font-face {
+	font-family: "GesturaDisplayRegular";
+	src:
+		local("GesturaDisplayRegular"),
+		url('/fonts/GesturaDisplay-Regular.otf'),
+}
+
+@font-face {
+	font-family: "GesturaDisplayLight";
+	src:
+		local("GesturaDisplayLight"),
+		url('/fonts/GesturaDisplay-Light.otf'),
+}
+
+@font-face {
+	font-family: "GesturaDisplayBold";
+	src:
+		local("GesturaDisplayBold"),
+		url('/fonts/GesturaDisplay-Bold.otf'),
+}
+
+@font-face {
+	font-family: "GesturaDisplayBoldItalic";
+	src:
+		local("GesturaDisplayBoldItalic"),
+		url('/fonts/GesturaDisplay-BoldItalic.otf'),
+}
+
+@mixin bodyFont {
+	font-family: GesturaDisplayRegular, sans-serif;
+}
+
+@mixin bodyLight {
+	font-family: GesturaDisplayLight, sans-serif;
+}
+
+@mixin bodyBold{
+	font-family: GesturaDisplayBold, sans-serif;
+}
+
+@mixin bodyBoldItalic {
+    font-family: GesturaDisplayBoldItalic, sans-serif;
+}
+
+b.bold {
+    @include bodyBold;
+	font-weight: bolder;
+}

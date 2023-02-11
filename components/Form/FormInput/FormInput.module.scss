@@ -1,0 +1,38 @@
+.container {
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: 2.3rem;
+  padding: 0.7rem;
+  outline: none;
+  box-shadow: none;
+}
+
+.icon-overlay {
+  display: grid;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  bottom: 0.1rem;
+  align-items: center;
+  justify-content: flex-end;
+  width: 4rem;
+  background-color: var(--c-white);
+  pointer-events: none;
+}
+
+.icon {
+  margin-right: 1.2rem;
+}
+
+.input-error {
+  border: none;
+}
+
+.input-error-message {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+}
