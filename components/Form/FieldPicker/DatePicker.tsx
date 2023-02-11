@@ -16,7 +16,8 @@ export const DatePicker: FC<FieldPickerProps> = (
   props
 ) => {
   const showPicker = (e: React.FormEvent): void => (e?.target as HTMLInputElement).showPicker()
+  
 
   // eslint-disable-next-line react/jsx-props-no-spreading
-  return <FormInput iconStyles={styles.icon} icon="#form-datepicker" onClick={showPicker} {...props} />
+  return <FormInput context={null} iconStyles={styles.icon} icon="#form-datepicker" onClick={showPicker} {...props} />
 }
