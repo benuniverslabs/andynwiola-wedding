@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import FormInput from '../FormInput/FormInput';
-import { ErrorMessage, Field, useFormikContext } from 'formik';
+import FormInput from '../FormInput/FormInput.jsx';
+import { useFormikContext } from 'formik';
 
 const NamePicker = () => {
 	const context = useFormikContext();

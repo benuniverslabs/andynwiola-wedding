@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import FormCheckbox from '../FormCheckboxes/FormCheckboxes';
+import FormCheckbox from '../FormCheckboxes/FormCheckboxes.jsx';
 import NamePicker from '../FormComponents/NamePicker';
 import { Formik, Form } from 'formik';
 import validationSchema from './validation';

@@ -1,19 +1,10 @@
+import React from 'react';
 import cn from 'classnames';
 import { ErrorMessage, Field, useFormikContext } from 'formik';
-import { FC } from 'react';
-// import { FieldProps, TextAreaProps } from '../../Form.interface'
-// import FieldLabel from '../FieldLabel/FieldLabel'
 import styles from './FormInput.module.scss';
 
-interface FieldProps {
-	className?: string;
-	name: string;
-	type?: string;
-  context: any
-}
 
-const FormikInput: FC<FieldProps> = ({
-	className,
+const FormikInput= ({
 	name,
 	type = 'text',
   context,
@@ -43,7 +34,7 @@ const FormikInput: FC<FieldProps> = ({
 			<ErrorMessage
 				className={styles['input-error-message']}
 				component="div"
-				name={name as string}
+				name={name}
 			/>
 		</div>
 	);
