@@ -6,8 +6,6 @@ import Hero from '@/components/Hero/Hero';
 import Button from 'react-bootstrap/Button';
 import styles from '@/styles/Home.module.scss';
 import RSVP from '@/components/Form/RSVP/RSVP';
-import { useEffect } from 'react';
-import emailjs from 'emailjs-com';
 import Section from '@/components/Section/Section';
 import Qnaire from '@/components/Form/Qnaire/Qnaire';
 export default function Home() {
