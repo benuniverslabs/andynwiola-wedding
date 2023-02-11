@@ -13,7 +13,7 @@ const Hero = () => {
 				className={styles['hero-image']}
 				src="/images/hero-image.JPG"
 				fill
-				alt="Andy and Wiola Main Image"
+				alt="Andy and Wiola Main Images"
 			/>
 		</div>
 		<div className={styles['text-container']}>
