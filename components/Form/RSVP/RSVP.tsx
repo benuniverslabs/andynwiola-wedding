@@ -2,8 +2,8 @@ import Button from 'react-bootstrap/Button';
 import FormCheckbox from '../FormCheckboxes/FormCheckboxes';
 import NamePicker from '../FormComponents/NamePicker';
 import { Formik, Form } from 'formik';
+import validationSchema from './validation';
 import styles from './RSVP.module.scss';
-import FormInput from '../FormInput/FormInput';
 
 const day1Options = [
 	{
@@ -34,33 +34,42 @@ const day2Options = [
 const RSVP = () => (
 	<section className={styles.container} id="rsvp">
 		<div id="afterparty">
-			
-
 			<Formik
 				initialValues={{
 					day1: '',
-                    day2: '',
-                    guest1: '',
-                    guest2: '',
-                    guest3: '',
-                    guest4: '',
+					day2: '',
+					guest1: '',
+					guest2: '',
+					guest3: '',
+					guest4: '',
 				}}
 				onSubmit={(val) => console.log(val)}
+				validationSchema={validationSchema}
 			>
-                <Form>
+				{({ errors, touched }) => {
+					const context = {
+						errors,
+						touched,
+					};
 
-                <NamePicker />
-				
-					<h6 className={styles['sub-title']}>Day 1</h6>
-					<FormCheckbox name={'day1'} options={day1Options} />
+					return (
+						<Form>
+							<NamePicker />
 
-					<h6 className={styles['sub-title']}>Day 2</h6>
-					<FormCheckbox name={'day2'} options={day2Options} />		
+							<h6 className={styles['sub-title']}>Day 1</h6>
+							<FormCheckbox context={context} name={'day1'} options={day1Options} />
 
-				<div>
-					<Button type="submit" variant="outline-secondary w-100">Submit</Button>
-				</div>
-                </Form>
+							<h6 className={styles['sub-title']}>Day 2</h6>
+							<FormCheckbox context={context} name={'day2'} options={day2Options} />
+
+							<div>
+								<Button type="submit" variant="outline-secondary w-100">
+									Submit
+								</Button>
+							</div>
+						</Form>
+					);
+				}}
 			</Formik>
 		</div>
 	</section>

@@ -1,6 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import NamePicker from '../FormComponents/NamePicker';
+import { Formik, Form } from 'formik';
 import styles from './Qnaire.module.scss';
+import { DatePicker } from '../FieldPicker/DatePicker';
+import validationSchema from './validation';
+import FormInput from '../FormInput/FormInput';
 
 const Qnaire = () => (
 	<section className={styles.container} id="rsvp">
@@ -9,61 +13,69 @@ const Qnaire = () => (
 			questionairre below
 		</p>
 		<div id="afterparty">
-			<NamePicker />
+			<Formik
+				initialValues={{
+					guest1: '',
+					guest2: '',
+					guest3: '',
+					guest4: '',
+					arrivalDate: '',
+					arrivalTime: '',
+					noNights: '',
+					dietryR: '',
+                    additionalInfo: ''
+				}}
+				onSubmit={(val) => console.log(val)}
+                validationSchema={validationSchema}
+			>
+				{({ errors, touched }) => {
+					const context = {
+						errors,
+						touched,
+					};
 
-			<label className="mb-2" htmlFor="exampleFormControlInput1">
-				Arrival Date
-			</label>
-			<input
-				type="email"
-				className="form-control mb-2"
-				id="guest1"
-				// placeholder="name@example.com"
-			/>
+					return (
+						<Form>
+							<NamePicker />
+							<label className="mb-2" htmlFor="exampleFormControlInput1">
+								Arrival Date
+							</label>
+							<FormInput context={context} name="arrivalDate" type="date" />
 
-			<label className="mb-2" htmlFor="exampleFormControlInput1">
-				Arrival Time
-			</label>
-			<input
-				type="email"
-				className="form-control mb-2"
-				id="guest1"
-				// placeholder="name@example.com"
-			/>
+							<label className="mb-2" htmlFor="exampleFormControlInput1">
+								Arrival Time
+							</label>
+							<FormInput context={context} name="arrivalTime" type="time" />
 
-			<label className="mb-2" htmlFor="exampleFormControlInput1">
-				How many nights are you staying?
-			</label>
-			<input
-				type="email"
-				className="form-control mb-2"
-				id="guest1"
-				// placeholder="name@example.com"
-			/>
+							<label className="mb-2" htmlFor="exampleFormControlInput1">
+								How many nights are you staying?
+							</label>
+							<FormInput context={context} name="noNights" type="number" />
 
-			<label className="mb-2" htmlFor="exampleFormControlInput1">
-				Allergies / Dietary Requirements
-			</label>
-			<input
-				type="email"
-				className="form-control mb-2"
-				id="guest1"
-				// placeholder="name@example.com"
-			/>
+							<label className="mb-2" htmlFor="exampleFormControlInput1">
+								Allergies / Dietary Requirements
+							</label>
+							<FormInput context={context} name="dietryR" type="number" />
 
-			<label className="mb-2" htmlFor="exampleFormControlInput1">
-				Any Additonal Comments
-			</label>
-			<input
-				type="email"
-				className="form-control mb-2"
-				id="guest1"
-				// placeholder="name@example.com"
-			/>
+							<label className="mb-2" htmlFor="exampleFormControlInput1">
+								Any Additonal Comments
+							</label>
+							<FormInput
+								context={context}
+								name="additionalInfo"
+								as="textarea"
+								rows={5}
+							/>
 
-			<div className="mt-4">
-				<Button variant="outline-secondary w-100">Submit</Button>
-			</div>
+							<div className="mt-4">
+								<Button type="submit" variant="outline-secondary w-100">
+									Submit
+								</Button>
+							</div>
+						</Form>
+					);
+				}}
+			</Formik>
 		</div>
 	</section>
 );

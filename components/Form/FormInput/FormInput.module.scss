@@ -11,6 +11,10 @@
   box-shadow: none;
 }
 
+textarea.input {
+  height:auto;
+}
+
 .icon-overlay {
   display: grid;
   position: absolute;
@@ -30,9 +34,12 @@
 
 .input-error {
   border: none;
+  border: 1px solid red;
 }
 
 .input-error-message {
   margin-top: 0.5rem;
   font-size: 1.3rem;
+  font-size: 14px;
+  color:red;
 }
