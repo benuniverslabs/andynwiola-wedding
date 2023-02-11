@@ -3,7 +3,24 @@ import FormCheckbox from '../FormCheckboxes/FormCheckboxes.jsx';
 import NamePicker from '../FormComponents/NamePicker';
 import { Formik, Form } from 'formik';
 import validationSchema from './validation';
+import emailjs from 'emailjs-com';
 import styles from './RSVP.module.scss';
+
+// useEffect(() => {
+// 	const data = {
+// 		to: 'ben.haynes.dev@gmail.com',
+// 		subject: 'RSVP FROM DAVID',
+// 		message: 'Yes yes',
+// 	};
+// 	emailjs
+// 		.send('service_ninau4u', 'template_9k2pi3a', data, 'kJerNjVPBD8xfpOqo')
+// 		.then((response) => {
+// 			console.log('Email successfully sent!');
+// 		})
+// 		.catch((error) => {
+// 			console.log('Error:', error);
+// 		});
+// }, []);
 
 const day1Options = [
 	{
@@ -43,7 +60,26 @@ const RSVP = () => (
 					guest3: '',
 					guest4: '',
 				}}
-				onSubmit={(val) => console.log(val)}
+				onSubmit={(val) => {
+					const data = {
+						to: 'ben.haynes.dev@gmail.com',
+						subject: 'RSVP FROM DAVID',
+						message: 'Yes yes',
+					};
+					emailjs
+						.send(
+							'service_ninau4u',
+							'template_9k2pi3a',
+							data,
+							'kJerNjVPBD8xfpOqo'
+						)
+						.then((response) => {
+							console.log('Email successfully sent!');
+						})
+						.catch((error) => {
+							console.log('Error:', error);
+						});
+				}}
 				validationSchema={validationSchema}
 			>
 				{({ errors, touched }) => {
@@ -57,10 +93,18 @@ const RSVP = () => (
 							<NamePicker />
 
 							<h6 className={styles['sub-title']}>Day 1</h6>
-							<FormCheckbox context={context} name={'day1'} options={day1Options} />
+							<FormCheckbox
+								context={context}
+								name={'day1'}
+								options={day1Options}
+							/>
 
 							<h6 className={styles['sub-title']}>Day 2</h6>
-							<FormCheckbox context={context} name={'day2'} options={day2Options} />
+							<FormCheckbox
+								context={context}
+								name={'day2'}
+								options={day2Options}
+							/>
 
 							<div>
 								<Button type="submit" variant="outline-secondary w-100">

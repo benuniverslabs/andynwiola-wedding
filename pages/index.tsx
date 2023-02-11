@@ -9,21 +9,7 @@ import RSVP from '@/components/Form/RSVP/RSVP';
 import Section from '@/components/Section/Section';
 import Qnaire from '@/components/Form/Qnaire/Qnaire';
 export default function Home() {
-	// useEffect(() => {
-	// 	const data = {
-	// 		to: 'ben.haynes.dev@gmail.com',
-	// 		subject: 'RSVP FROM DAVID',
-	// 		message: 'Yes yes',
-	// 	};
-	// 	emailjs
-	// 		.send('service_ninau4u', 'template_9k2pi3a', data, 'kJerNjVPBD8xfpOqo')
-	// 		.then((response) => {
-	// 			console.log('Email successfully sent!');
-	// 		})
-	// 		.catch((error) => {
-	// 			console.log('Error:', error);
-	// 		});
-	// }, []);
+	
 	return (
 		<div>
 			<Head>
