@@ -1,13 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
-import { ErrorMessage, Field, useFormikContext } from 'formik';
+import { ErrorMessage, Field } from 'formik';
 import styles from './FormInput.module.scss';
 
 
 const FormikInput= ({
 	name,
 	type = 'text',
-  context,
+  	context,
 	...props
 }) => {
 
