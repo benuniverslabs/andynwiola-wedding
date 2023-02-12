@@ -68,7 +68,7 @@ const RSVP = () => {
 					onSubmit={({ guest1, guest2, guest3, guest4, day1, day2 }) => {
 						const names = `${guest1} ${guest2} ${guest3} ${guest4}`;
 						const data = {
-							to: 'ben.haynes.dev@gmail.com',
+							to: 'andywiolawedding@outlook.com',
 							from_name: names,
 							names: names,
 							day1: day1,
