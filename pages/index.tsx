@@ -9,7 +9,6 @@ import RSVP from '@/components/Form/RSVP/RSVP';
 import Section from '@/components/Section/Section';
 import Qnaire from '@/components/Form/Qnaire/Qnaire';
 export default function Home() {
-	
 	return (
 		<div>
 			<Head>
@@ -34,14 +33,57 @@ export default function Home() {
 				</div>
 				<div id="Transport">
 					<h4 className="heading-title">Transport</h4>
-					<p className="body-text">
+					<p
+						className="body-text"
+						style={{
+							textTransform: 'uppercase',
+							paddingBottom: 0,
+							marginBottom: '0.4rem',
+							fontWeight: 500,
+						}}
+					>
+						Arrival in Poland
+					</p>
+					<p
+						className="body-text"
+						style={{
+							marginTop: 0,
+						}}
+					>
 						We are happy to arrange transport from Warsaw airport for our guests
 						once arrival dates and times are confirmed.
 					</p>
-					<p className="body-text">
+
+					<p
+						className="body-text"
+						style={{
+							marginTop: 0,
+						}}
+					>
+						If you want to arrange your own travel, the best way to get to Łuków is by train from Warsaw East Station
+					</p>
+
+					<p
+						className="body-text"
+						style={{
+							textTransform: 'uppercase',
+							paddingBottom: 0,
+							marginBottom: '0.4rem',
+							fontWeight: 500,
+						}}
+					>
+						On the wedding day
+					</p>
+					<p
+						className="body-text"
+						style={{
+							marginTop: 0,
+						}}
+					>
 						Transport will be provided from your accommodation throughout the
 						day. Please be ready for 2:00PM
 					</p>
+					
 				</div>
 				<div id="accomodation">
 					<h4 className="heading-title">Accommodation</h4>
@@ -52,7 +94,9 @@ export default function Home() {
 					</p>
 				</div>
 
-				<Button variant="outline-dark">Questionnaire</Button>
+				<Button href="#qnaire" variant="outline-dark">
+					Questionnaire
+				</Button>
 			</Section>
 
 			<Section id="day2" title="Day 2">
@@ -85,24 +129,27 @@ export default function Home() {
 				</Section>
 
 				<Section title="Gifts" id="gifts">
-					<p className="body-text">
+					<div className="body-text">
+					<p>
 						Please do not feel obliged to buy us a gift, all that we are
-						expecting is you. If you would like to give us something, a
-						contribution would be greatly appreciated. Thank you, The Bride and
-						Groom.
+						expecting is you. However, if you would like to give us something, a
+						contribution would be greatly appreciated.
 					</p>
+					<p>Thank you,</p>
+					<p> The Bride and Groom.</p>
+					</div>
 				</Section>
 			</Section>
 
-			<Section title="Questionnaire" id="qnaire">
+			<Section title="Questionnaire" id="qnaire" style={{
+				paddingTop:'1.5rem'
+			}}>
 				<Qnaire />
 			</Section>
 
 			<Section title="RSVP" id="RSVP">
 				<RSVP />
 			</Section>
-
-			
 		</div>
 	);
 }

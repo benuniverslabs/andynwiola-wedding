@@ -36,7 +36,7 @@ const Qnaire = () => {
 				</div>
 			)}
 			<p>
-				In order to book your transfer from Warsaw Choppin airport please fill
+				In order to book your transfer from Warsaw Chopin Airport and to secure your rooms, please fill
 				out the questionnaire below.
 			</p>
 			<div id="afterparty">

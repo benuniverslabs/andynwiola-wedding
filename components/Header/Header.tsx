@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon';
 import styles from './Header.module.scss';
+import Button from 'react-bootstrap/Button';
 import Image from 'next/image';
 
 type ListItem = {
@@ -80,9 +81,9 @@ const Header = () => {
 					<a className="nav-item nav-link" href="#qnaire">
 						Questionnaire
 					</a>
-					<button type="button" className="btn btn-outline-secondary">
+					<Button href="#rsvp" type="button" variant="outline-dark">
 						RSVP
-					</button>
+					</Button>
 				</div>
 				<div>
 					<HamburgerIcon onChange={handleChange} active={showMobileNav}/>
