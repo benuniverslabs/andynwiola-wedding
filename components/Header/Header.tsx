@@ -112,7 +112,7 @@ const Header = () => {
 							Questionnaire
 						</a>
 					</div>
-					<Button href="#rsvp" type="button" className="btn btn-sm" variant="outline-dark" style={{display:'grid', placeItems:'center', width:'50%'}}>
+					<Button href="#rsvp" type="button" onClick={() => setShowMobileNav(false)}  className="btn btn-sm" variant="outline-dark" style={{display:'grid', placeItems:'center', width:'50%'}}>
 						RSVP
 					</Button>
 				</div>
