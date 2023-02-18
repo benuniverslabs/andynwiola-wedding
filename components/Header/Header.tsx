@@ -112,9 +112,9 @@ const Header = () => {
 							Questionnaire
 						</a>
 					</div>
-					<button type="button" className="btn btn-outline-secondary">
+					<Button href="#rsvp" type="button" className="btn btn-sm" variant="outline-dark" style={{display:'grid', placeItems:'center', width:'50%'}}>
 						RSVP
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>

@@ -142,12 +142,17 @@ export default function Home() {
 			</Section>
 
 			<Section title="Questionnaire" id="qnaire" style={{
-				paddingTop:'1.5rem'
+				paddingTop:'1.5rem',
+				'scroll-margin-top':' 6rem'
 			}}>
 				<Qnaire />
 			</Section>
 
-			<Section title="RSVP" id="RSVP">
+			<Section title="RSVP" id="rsvp" style={{
+				paddingTop:'1.5rem',
+				'scroll-margin-top':' 6rem',
+				paddingBottom:180
+			}}>
 				<RSVP />
 			</Section>
 		</div>

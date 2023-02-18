@@ -13,7 +13,7 @@ const Qnaire = () => {
 	return (
 		<section
 			className={styles.container}
-			id="rsvp"
+			
 			style={{ position: 'relative' }}
 		>
 			{formSuccess && (

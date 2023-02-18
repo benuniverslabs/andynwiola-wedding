@@ -37,7 +37,7 @@ const RSVP = () => {
 	const [formSuccess, setFormSuccess] = useState(false);
 
 	return (
-		<section className={styles.container} id="rsvp" style={{position:'relative'}}>
+		<section className={styles.container} style={{position:'relative'}}>
             {
                 formSuccess && <div style={{
                     position:'absolute',

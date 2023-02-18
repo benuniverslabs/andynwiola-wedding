@@ -2,13 +2,14 @@
 
 body {
   background: #EFE7DA;
+  scroll-behavior: smooth;
 }
 
 
 .page-title {
   text-decoration: underline;
   font-size: 22px;
-  font-weight: 500;
+font-weight: 500;
 
   // @include bodyBoldItalic;
   @include bodyBold;
@@ -28,3 +29,5 @@ body {
   @include bodyFont;
   margin-block:2rem;
 }
+
+
