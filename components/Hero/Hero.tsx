@@ -17,11 +17,13 @@ const Hero = () => {
 			/>
 		</div>
 		<div className={styles['text-container']}>
-			<p className={styles['hero-text']}>Wioletta & Andrew</p>
+			{/* <p className={styles['hero-text']}>Wioletta & Andrew</p>
 			<div className={styles['text-image-container']}>
 				<img className={styles['text-image']} src="images/logo.png"></img>
 			</div>
-			<p className={styles['hero-date']}>7th October 2023</p>
+			<p className={styles['hero-date']}>7th October 2023</p> */}
+			<Image src="/images/name-text.png" width={300} height={200} className={styles['name-text']}/>
+			<p className={styles['hero-date']} style={{marginTop:25}}>7th October 2023</p>
 		</div>
 	</div>
 );}
