@@ -35,26 +35,29 @@ const day2Options = [
 
 const RSVP = () => {
 	const [formSuccess, setFormSuccess] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 
 	return (
-		<section className={styles.container} style={{position:'relative'}}>
-            {
-                formSuccess && <div style={{
-                    position:'absolute',
-                    top:0,
-                    left:0,
-                    width:'100%',
-                    height: '100%',
-                    background:'rgba(255,255,255,.8)',
-                    zIndex:55,
-                    display:'grid',
-                    placeItems:'center',
-                    color: 'green',
-                    fontSize:22
-                }}>
-                    RSVP Submitted
-                </div>
-            }
+		<section className={styles.container} style={{ position: 'relative' }}>
+			{formSuccess && (
+				<div
+					style={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						width: '100%',
+						height: '100%',
+						background: 'rgba(255,255,255,.8)',
+						zIndex: 55,
+						display: 'grid',
+						placeItems: 'center',
+						color: 'green',
+						fontSize: 22,
+					}}
+				>
+					RSVP Submitted
+				</div>
+			)}
 			<div id="afterparty">
 				<Formik
 					initialValues={{
@@ -65,7 +68,10 @@ const RSVP = () => {
 						guest3: '',
 						guest4: '',
 					}}
-					onSubmit={({ guest1, guest2, guest3, guest4, day1, day2 }) => {
+					onSubmit={(
+						{ guest1, guest2, guest3, guest4, day1, day2 },
+						{ setSubmitting }
+					) => {
 						const names = `${guest1} ${guest2} ${guest3} ${guest4}`;
 						const data = {
 							to: 'andywiolawedding@outlook.com',
@@ -74,6 +80,8 @@ const RSVP = () => {
 							day1: day1,
 							day2: day2,
 						};
+						setSubmitting(true);
+
 						emailjs
 							.send(
 								'service_ninau4u',
@@ -82,49 +90,54 @@ const RSVP = () => {
 								'kJerNjVPBD8xfpOqo'
 							)
 							.then((response) => {
-								if(response.text === 'OK') {
-                                    setFormSuccess(true)
-                                }
+								if (response.text === 'OK') {
+									setFormSuccess(true);
+									setError(null);
+								}
 							})
 							.catch((error) => {
 								console.log('Error:', error);
+								setError(error.text)
+							})
+							.finally(() => {
+								setSubmitting(false);
 							});
 					}}
 					validationSchema={validationSchema}
 				>
-					{({ errors, touched }) => {
+					{({ errors, touched, isSubmitting }) => {
 						const context = {
 							errors,
 							touched,
 						};
 
 						return (
-							<Form>								
-									<NamePicker />
-									<h6 className={styles['sub-title']}>Day 1</h6>
-									<FormCheckbox
-										context={context}
-										name={'day1'}
-										options={day1Options}
-									/>
+							<Form>
+								<NamePicker />
+								<h6 className={styles['sub-title']}>Day 1</h6>
+								<FormCheckbox
+									context={context}
+									name={'day1'}
+									options={day1Options}
+								/>
 
-									<h6 className={styles['sub-title']}>Day 2</h6>
-									<FormCheckbox
-										context={context}
-										name={'day2'}
-										options={day2Options}
-									/>
+								<h6 className={styles['sub-title']}>Day 2</h6>
+								<FormCheckbox
+									context={context}
+									name={'day2'}
+									options={day2Options}
+								/>
 
-									<div>
-										<Button
-											type="submit"
-											disabled={formSuccess}
-											variant="secondary w-100"
-										>
-											Submit
-										</Button>
-									</div>
-							
+								<div>
+									<Button
+										type="submit"
+										disabled={formSuccess || isSubmitting}
+										variant="secondary w-100"
+									>
+										Submit
+									</Button>
+								</div>
+								<p style={{ color: 'red' }}>{error}</p>
 							</Form>
 						);
 					}}

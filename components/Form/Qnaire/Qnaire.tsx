@@ -9,6 +9,7 @@ import styles from './Qnaire.module.scss';
 
 const Qnaire = () => {
 	const [formSuccess, setFormSuccess] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 
 	return (
 		<section
@@ -52,7 +53,9 @@ const Qnaire = () => {
 						dietryR: '',
 						additionalInfo: '',
 					}}
-					onSubmit={({ guest1, guest2, guest3, guest4, arrivalDate, arrivalTime, noNights, dietryR, additionalInfo}) => {
+					onSubmit={({ guest1, guest2, guest3, guest4, arrivalDate, arrivalTime, noNights, dietryR, additionalInfo}, { setSubmitting}) => {
+						setSubmitting(true)
+						
 						const names = `${guest1} ${guest2} ${guest3} ${guest4}`;
 						const data = {
 							to: 'andywiolawedding@outlook.com',
@@ -75,15 +78,17 @@ const Qnaire = () => {
 							.then((response) => {
 								if (response.text === 'OK') {
 									setFormSuccess(true);
+									setError(null);
 								}
 							})
 							.catch((error) => {
 								console.log('Error:', error);
-							});
+								setError(error.text)
+							}).finally(() => setSubmitting(false)) ;
 					}}
 					validationSchema={validationSchema}
 				>
-					{({ errors, touched }) => {
+					{({ errors, touched, isSubmitting }) => {
 						const context = {
 							errors,
 							touched,
@@ -126,11 +131,13 @@ const Qnaire = () => {
 									<Button
 										type="submit"
 										variant="secondary w-100"
+										disabled={formSuccess || isSubmitting}
 										style={{ textAlign: 'center' }}
 									>
 										Submit
 									</Button>
 								</div>
+								<p style={{ color: 'red' }}>{error}</p>
 							</Form>
 						);
 					}}
