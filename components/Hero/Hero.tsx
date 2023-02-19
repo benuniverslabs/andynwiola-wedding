@@ -22,7 +22,7 @@ const Hero = () => {
 				<img className={styles['text-image']} src="images/logo.png"></img>
 			</div>
 			<p className={styles['hero-date']}>7th October 2023</p> */}
-			<Image src="/images/name-text.png" width={300} height={200} className={styles['name-text']}/>
+			<Image src="/images/name-text.png" width={300} height={200} className={styles['name-text']} alt="Andy Wiola Hero Text"/>
 			<p className={styles['hero-date']} style={{marginTop:25}}>7th October 2023</p>
 		</div>
 	</div>
