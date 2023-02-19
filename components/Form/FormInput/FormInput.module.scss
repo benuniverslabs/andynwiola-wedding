@@ -1,5 +1,13 @@
 .container {
   margin-bottom: 0.5rem;
+  width:100%;
+  input[type="date"], input[type="time"]{
+    background-color: white;
+    border:1px solid #ccc;
+    min-width:80%;
+    color:black;
+    display:flex;
+  }
 }
 
 .input {
@@ -10,6 +18,8 @@
   outline: none;
   box-shadow: none;
 }
+
+
 
 textarea.input {
   height:auto;

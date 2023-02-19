@@ -1,7 +1,10 @@
+@import '@/styles/main';
 .container {
     :not(p) {
         text-align: left;
     }
+
+    @include bodyFont;
 
     scroll-margin-top: 11rem;
 }

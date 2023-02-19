@@ -9,17 +9,16 @@ body {
 .page-title {
   text-decoration: underline;
   font-size: 22px;
-font-weight: 500;
+  font-weight: 500;
 
-  // @include bodyBoldItalic;
   @include bodyBold;
   letter-spacing: 0.6px;
 }
 
 
 .heading-title {
-  font-size:18px;
-  margin-bottom:1rem;
+  font-size: 18px;
+  margin-bottom: 1rem;
 
   @include bodyBold;
 
@@ -27,7 +26,5 @@ font-weight: 500;
 
 .body-text {
   @include bodyFont;
-  margin-block:2rem;
+  margin-block: 2rem;
 }
-
-

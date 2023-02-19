@@ -4,7 +4,6 @@ import { useFormikContext } from 'formik';
 
 const NamePicker = () => {
 	const context = useFormikContext();
-	console.log(context);
 
 	const [showMore, setShowMore] = useState(false);
 
